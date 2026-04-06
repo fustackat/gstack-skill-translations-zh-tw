@@ -7,46 +7,50 @@
   <title>gstack SKILL 繁體中文翻譯</title>
   <style>
     :root {
-      --bg: #f3f1ec;
-      --bg-elev: rgba(255,255,255,0.74);
-      --panel: #ffffff;
-      --panel-2: #f8f6f1;
-      --text: #121212;
-      --muted: #6b675f;
-      --line: rgba(18,18,18,0.10);
-      --line-strong: rgba(18,18,18,0.16);
-      --accent: #151515;
-      --accent-soft: #efede8;
-      --shadow: 0 16px 50px rgba(0,0,0,0.08);
-      --shadow-soft: 0 10px 28px rgba(0,0,0,0.05);
-      --code-bg: #f2efe8;
-      --quote-bg: #f7f4ee;
-      --table-head: #f6f4ef;
-      --scroll-track: #ece8df;
-      --scroll-thumb: #b8b1a3;
-      --link: #114eb8;
-      --maxw: 980px;
+      --bg: #f6f7fb;
+      --bg-soft: #eef1f7;
+      --panel: rgba(255, 255, 255, 0.82);
+      --panel-solid: #ffffff;
+      --panel-muted: #f7f8fc;
+      --text: #16181d;
+      --muted: #6b7280;
+      --line: rgba(22, 24, 29, 0.10);
+      --line-strong: rgba(22, 24, 29, 0.16);
+      --accent: #17191f;
+      --accent-soft: #eef2ff;
+      --accent-line: rgba(52, 87, 255, 0.22);
+      --link: #3156d3;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.05);
+      --code-bg: #f4f6fb;
+      --quote-bg: #f7f8fc;
+      --scroll-track: #ebedf4;
+      --scroll-thumb: #b1b7c7;
+      --hero-glow: radial-gradient(circle at top left, rgba(86, 117, 255, 0.14), transparent 34%);
+      --maxw: 860px;
     }
 
     html[data-theme="dark"] {
-      --bg: #0c0c0d;
-      --bg-elev: rgba(19,19,20,0.78);
-      --panel: #151516;
-      --panel-2: #1a1a1c;
-      --text: #f4f4f4;
-      --muted: #a4a4a8;
-      --line: rgba(255,255,255,0.10);
-      --line-strong: rgba(255,255,255,0.16);
-      --accent: #f5f5f5;
-      --accent-soft: #202023;
-      --shadow: 0 24px 72px rgba(0,0,0,0.45);
-      --shadow-soft: 0 14px 32px rgba(0,0,0,0.28);
-      --code-bg: #1d1d20;
-      --quote-bg: #18181a;
-      --table-head: #1b1b1d;
-      --scroll-track: #131316;
-      --scroll-thumb: #5a5a61;
-      --link: #88b4ff;
+      --bg: #0b0d12;
+      --bg-soft: #11141a;
+      --panel: rgba(18, 20, 27, 0.82);
+      --panel-solid: #161922;
+      --panel-muted: #11141b;
+      --text: #eef2f8;
+      --muted: #9ca3af;
+      --line: rgba(255, 255, 255, 0.09);
+      --line-strong: rgba(255, 255, 255, 0.15);
+      --accent: #f5f7fb;
+      --accent-soft: #1a2234;
+      --accent-line: rgba(133, 160, 255, 0.22);
+      --link: #8cacff;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
+      --shadow-soft: 0 14px 34px rgba(0, 0, 0, 0.24);
+      --code-bg: #111723;
+      --quote-bg: #121720;
+      --scroll-track: #11151d;
+      --scroll-thumb: #596273;
+      --hero-glow: radial-gradient(circle at top left, rgba(111, 145, 255, 0.17), transparent 34%);
     }
 
     * { box-sizing: border-box; }
@@ -62,8 +66,8 @@
       color: var(--text);
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(122,122,122,0.16), transparent 26%),
-        radial-gradient(circle at bottom right, rgba(122,122,122,0.10), transparent 22%),
+        radial-gradient(circle at top right, rgba(127, 127, 127, 0.10), transparent 24%),
+        radial-gradient(circle at bottom left, rgba(127, 127, 127, 0.08), transparent 18%),
         var(--bg);
       transition: background 180ms ease, color 180ms ease;
     }
@@ -88,28 +92,40 @@
       border-radius: 999px;
     }
 
-    a { color: var(--link); }
+    a { color: var(--link); text-decoration-thickness: 0.08em; text-underline-offset: 0.18em; }
     button, input { font: inherit; }
 
     .app {
       min-height: 100vh;
       display: grid;
-      grid-template-columns: 320px minmax(0, 1fr);
+      grid-template-columns: 300px minmax(0, 1fr) 260px;
+      gap: 0;
     }
 
-    .sidebar {
+    .sidebar,
+    .toc {
       position: sticky;
       top: 0;
       height: 100vh;
       overflow: hidden;
+      padding: 18px;
+      background: var(--panel);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .sidebar {
+      border-right: 1px solid var(--line);
       display: flex;
       flex-direction: column;
       gap: 14px;
-      padding: 20px;
-      border-right: 1px solid var(--line);
-      background: var(--bg-elev);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .toc {
+      border-left: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
     }
 
     .brand {
@@ -118,60 +134,66 @@
 
     .eyebrow {
       display: inline-flex;
-      gap: 8px;
       align-items: center;
+      gap: 8px;
       padding: 6px 10px;
-      border: 1px solid var(--line);
       border-radius: 999px;
-      background: var(--panel);
+      border: 1px solid var(--line);
+      background: var(--panel-solid);
       color: var(--muted);
       font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 12px;
+      box-shadow: var(--shadow-soft);
     }
 
     .brand h1 {
       margin: 0;
       font-size: 28px;
       line-height: 1.02;
-      letter-spacing: -0.05em;
+      letter-spacing: -0.06em;
     }
 
     .brand p {
       margin: 10px 0 0;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.65;
       font-size: 14px;
     }
 
     .toolbar {
       display: flex;
-      gap: 10px;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .btn, .search {
+    .btn,
+    .search {
       border: 1px solid var(--line);
-      background: var(--panel);
+      background: var(--panel-solid);
       color: var(--text);
       box-shadow: var(--shadow-soft);
     }
 
     .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       border-radius: 14px;
       padding: 10px 14px;
-      text-decoration: none;
       cursor: pointer;
-      transition: transform 120ms ease, background 160ms ease, border-color 160ms ease;
+      text-decoration: none;
+      transition: transform 120ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
     }
 
     .btn:hover { transform: translateY(-1px); }
 
     .btn.primary {
       background: var(--accent);
-      color: var(--bg);
       border-color: var(--accent);
+      color: var(--bg);
     }
 
     .search {
@@ -182,11 +204,11 @@
     }
 
     .search:focus {
-      border-color: var(--line-strong);
-      box-shadow: 0 0 0 4px rgba(127,127,127,0.10), var(--shadow-soft);
+      border-color: var(--accent-line);
+      box-shadow: 0 0 0 4px rgba(127, 127, 127, 0.10), var(--shadow-soft);
     }
 
-    .sidebar-meta {
+    .stats {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
@@ -196,7 +218,7 @@
       padding: 12px 14px;
       border-radius: 18px;
       border: 1px solid var(--line);
-      background: var(--panel);
+      background: var(--panel-solid);
       box-shadow: var(--shadow-soft);
     }
 
@@ -211,28 +233,41 @@
       font-size: 12px;
     }
 
-    .nav-wrap {
+    .nav-wrap,
+    .toc-wrap {
       min-height: 0;
       overflow: auto;
-      padding-right: 2px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
+      padding-right: 4px;
     }
 
-    .group-title {
-      position: sticky;
-      top: 0;
-      z-index: 2;
+    .nav-section + .nav-section {
+      margin-top: 16px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
       margin: 0 0 8px;
-      padding: 8px 2px;
-      font-size: 12px;
+      padding: 0 2px;
       color: var(--muted);
+      font-size: 12px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      background: linear-gradient(180deg, var(--bg-elev), rgba(0,0,0,0));
+    }
+
+    .section-head .count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 26px;
+      height: 22px;
+      padding: 0 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel-solid);
+      font-size: 11px;
     }
 
     .nav-group {
@@ -242,36 +277,38 @@
 
     .nav-item {
       width: 100%;
-      text-align: left;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 12px;
-      border: 1px solid var(--line);
+      padding: 12px 13px;
+      text-align: left;
       border-radius: 16px;
+      border: 1px solid var(--line);
       background: transparent;
       color: inherit;
-      padding: 12px 13px;
       cursor: pointer;
       transition: transform 120ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
     }
 
     .nav-item:hover {
       transform: translateY(-1px);
-      background: var(--accent-soft);
+      background: var(--panel-solid);
+      box-shadow: var(--shadow-soft);
     }
 
     .nav-item.active {
-      background: var(--accent);
-      color: var(--bg);
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), transparent), var(--accent);
       border-color: var(--accent);
+      color: var(--bg);
       box-shadow: var(--shadow);
     }
 
     .nav-item.active .nav-sub,
     .nav-item.active .nav-badge {
       color: inherit;
-      opacity: 0.88;
+      opacity: 0.86;
+      border-color: rgba(255,255,255,0.16);
     }
 
     .nav-main {
@@ -280,8 +317,8 @@
 
     .nav-label {
       display: block;
-      font-weight: 650;
       font-size: 14px;
+      font-weight: 650;
       letter-spacing: -0.01em;
       word-break: break-word;
     }
@@ -289,60 +326,89 @@
     .nav-sub {
       display: block;
       margin-top: 4px;
-      font-size: 12px;
       color: var(--muted);
+      font-size: 12px;
+      line-height: 1.45;
     }
 
     .nav-badge {
       flex: none;
-      font-size: 11px;
-      color: var(--muted);
-      border: 1px solid var(--line);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       border-radius: 999px;
+      border: 1px solid var(--line);
       padding: 4px 8px;
+      color: var(--muted);
+      font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
 
     .main {
       min-width: 0;
-      padding: 22px;
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 18px;
+      padding: 22px;
     }
 
-    .hero, .viewer {
+    .hero,
+    .viewer,
+    .toc-card {
       border: 1px solid var(--line);
-      background: var(--bg-elev);
+      background: var(--panel);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       box-shadow: var(--shadow);
     }
 
     .hero {
-      border-radius: 28px;
-      padding: 22px 24px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      padding: 24px 26px;
       display: flex;
-      gap: 16px;
+      flex-wrap: wrap;
       justify-content: space-between;
       align-items: flex-start;
-      flex-wrap: wrap;
+      gap: 18px;
+      background: var(--hero-glow), var(--panel);
     }
 
     .hero h2 {
       margin: 0;
-      font-size: 34px;
-      line-height: 1.03;
-      letter-spacing: -0.06em;
+      font-size: 38px;
+      line-height: 1.02;
+      letter-spacing: -0.07em;
     }
 
     .hero p {
       margin: 10px 0 0;
       color: var(--muted);
-      line-height: 1.65;
-      font-size: 15px;
+      line-height: 1.7;
       max-width: 60ch;
+      font-size: 15px;
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--panel-solid);
+      color: var(--muted);
+      padding: 8px 12px;
+      font-size: 12px;
+      box-shadow: var(--shadow-soft);
     }
 
     .hero-actions {
@@ -368,10 +434,10 @@
       gap: 14px;
       padding: 14px 18px;
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(180deg, rgba(127,127,127,0.06), transparent), var(--panel);
+      background: linear-gradient(180deg, rgba(127,127,127,0.05), transparent), var(--panel-solid);
     }
 
-    .viewer-topbar .left {
+    .viewer-left {
       display: flex;
       align-items: center;
       gap: 10px;
@@ -383,40 +449,106 @@
       height: 10px;
       border-radius: 50%;
       background: var(--muted);
-      opacity: 0.4;
+      opacity: 0.40;
     }
 
-    .doc-meta {
-      min-width: 0;
-    }
-
-    .doc-meta strong,
-    .doc-meta span {
+    .viewer-meta strong,
+    .viewer-meta span {
       display: block;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .doc-meta strong { font-size: 14px; }
-    .doc-meta span { font-size: 12px; color: var(--muted); }
+    .viewer-meta strong { font-size: 14px; }
+    .viewer-meta span { font-size: 12px; color: var(--muted); }
 
-    .viewer-body {
+    .viewer-scroll {
       flex: 1;
       min-height: 0;
       overflow: auto;
-      background: var(--panel);
-      padding: 0;
+      background: var(--panel-solid);
     }
 
     .content-shell {
       max-width: var(--maxw);
       margin: 0 auto;
-      padding: 34px 28px 80px;
+      padding: 34px 28px 88px;
+    }
+
+    .toc-title {
+      margin: 2px 0 0;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .toc-card {
+      border-radius: 24px;
+      padding: 16px;
+      background: var(--panel);
+    }
+
+    .toc-card h3 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .toc-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+
+    .toc-links {
+      display: grid;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .toc-link {
+      display: block;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      transition: background 140ms ease, color 140ms ease, border-color 140ms ease;
+    }
+
+    .toc-link:hover {
+      background: var(--panel-solid);
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .toc-link.level-3 {
+      padding-left: 22px;
+      font-size: 12px;
+    }
+
+    .toc-link.active {
+      background: var(--accent-soft);
+      border-color: var(--accent-line);
+      color: var(--text);
+    }
+
+    .empty {
+      padding: 38px 18px;
+      border-radius: 18px;
+      border: 1px dashed var(--line-strong);
+      background: var(--panel-muted);
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
     }
 
     .loading {
-      color: var(--muted);
       display: grid;
       gap: 12px;
     }
@@ -424,15 +556,15 @@
     .loading .bar {
       height: 14px;
       border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent-soft), var(--panel-2), var(--accent-soft));
+      background: linear-gradient(90deg, var(--panel-muted), var(--panel-solid), var(--panel-muted));
       background-size: 220% 100%;
-      animation: shimmer 1.35s linear infinite;
+      animation: shimmer 1.3s linear infinite;
     }
 
-    .loading .bar:nth-child(1) { width: 46%; height: 22px; }
-    .loading .bar:nth-child(2) { width: 92%; }
-    .loading .bar:nth-child(3) { width: 86%; }
-    .loading .bar:nth-child(4) { width: 78%; }
+    .loading .bar:nth-child(1) { width: 42%; height: 24px; }
+    .loading .bar:nth-child(2) { width: 94%; }
+    .loading .bar:nth-child(3) { width: 88%; }
+    .loading .bar:nth-child(4) { width: 74%; }
 
     @keyframes shimmer {
       from { background-position: 200% 0; }
@@ -441,7 +573,7 @@
 
     .markdown-body {
       color: var(--text);
-      line-height: 1.82;
+      line-height: 1.84;
       font-size: 16px;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
@@ -457,44 +589,35 @@
     .markdown-body h4,
     .markdown-body h5,
     .markdown-body h6 {
+      margin: 1.55em 0 0.58em;
       color: var(--text);
-      line-height: 1.2;
-      letter-spacing: -0.04em;
-      margin: 1.5em 0 0.56em;
+      line-height: 1.18;
+      letter-spacing: -0.045em;
       scroll-margin-top: 24px;
     }
 
-    .markdown-body h1 { font-size: 2.3em; }
+    .markdown-body h1 { font-size: 2.35em; }
     .markdown-body h2 {
-      font-size: 1.72em;
-      padding-bottom: 0.36em;
+      font-size: 1.74em;
+      padding-bottom: 0.38em;
       border-bottom: 1px solid var(--line);
     }
-    .markdown-body h3 { font-size: 1.34em; }
+    .markdown-body h3 { font-size: 1.35em; }
     .markdown-body h4 { font-size: 1.12em; }
 
     .markdown-body p,
     .markdown-body ul,
     .markdown-body ol,
     .markdown-body pre,
-    .markdown-body blockquote,
     .markdown-body table,
+    .markdown-body blockquote,
     .markdown-body hr {
-      margin: 1.05em 0;
+      margin: 1.08em 0;
     }
 
     .markdown-body ul,
-    .markdown-body ol {
-      padding-left: 1.4em;
-    }
-
+    .markdown-body ol { padding-left: 1.42em; }
     .markdown-body li { margin: 0.34em 0; }
-
-    .markdown-body a {
-      color: var(--link);
-      text-underline-offset: 0.18em;
-      text-decoration-thickness: 0.08em;
-    }
 
     .markdown-body hr {
       border: 0;
@@ -502,18 +625,18 @@
     }
 
     .markdown-body code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.94em;
       background: var(--code-bg);
       padding: 0.16em 0.42em;
       border-radius: 8px;
-      font-size: 0.94em;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     }
 
     .markdown-body pre {
       overflow: auto;
-      background: var(--code-bg);
       border: 1px solid var(--line);
-      border-radius: 18px;
+      border-radius: 20px;
+      background: var(--code-bg);
       padding: 16px 18px;
       box-shadow: var(--shadow-soft);
     }
@@ -529,9 +652,9 @@
       margin-left: 0;
       margin-right: 0;
       padding: 14px 18px;
-      border-left: 4px solid var(--line-strong);
+      border-left: 4px solid var(--accent-line);
       background: var(--quote-bg);
-      border-radius: 16px;
+      border-radius: 18px;
       color: var(--muted);
     }
 
@@ -542,20 +665,20 @@
       border: 1px solid var(--line);
       border-radius: 18px;
       overflow: hidden;
-      background: var(--panel);
+      background: var(--panel-solid);
     }
 
     .markdown-body th,
     .markdown-body td {
       padding: 12px 14px;
-      vertical-align: top;
       text-align: left;
-      border-bottom: 1px solid var(--line);
+      vertical-align: top;
       border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .markdown-body th {
-      background: var(--table-head);
+      background: var(--panel-muted);
       font-weight: 650;
     }
 
@@ -573,44 +696,21 @@
       box-shadow: var(--shadow-soft);
     }
 
-    .markdown-body details {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 12px 14px;
-      background: var(--panel-2);
-    }
-
-    .markdown-body summary {
-      cursor: pointer;
-      font-weight: 650;
-    }
-
-    .empty {
-      color: var(--muted);
-      text-align: center;
-      padding: 54px 24px;
-      border: 1px dashed var(--line-strong);
-      border-radius: 20px;
-      background: var(--panel-2);
-    }
-
     .footer-note {
-      margin-top: 18px;
+      margin-top: 22px;
       color: var(--muted);
       font-size: 13px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
-    .mobile-tools {
-      display: none;
+    .mobile-toggle { display: none; }
+
+    @media (max-width: 1280px) {
+      .app { grid-template-columns: 290px minmax(0, 1fr); }
+      .toc { display: none; }
     }
 
-    @media (max-width: 1080px) {
-      .app { grid-template-columns: 300px minmax(0, 1fr); }
-      .hero h2 { font-size: 30px; }
-    }
-
-    @media (max-width: 900px) {
+    @media (max-width: 920px) {
       .app { grid-template-columns: 1fr; }
       .sidebar {
         position: relative;
@@ -619,19 +719,19 @@
         border-bottom: 1px solid var(--line);
       }
       .main { padding-top: 0; }
-      .mobile-tools { display: inline-flex; }
+      .mobile-toggle { display: inline-flex; }
       .sidebar.collapsed .nav-wrap,
-      .sidebar.collapsed .search,
-      .sidebar.collapsed .sidebar-meta { display: none; }
+      .sidebar.collapsed .stats,
+      .sidebar.collapsed .search { display: none; }
     }
 
     @media (max-width: 640px) {
       .sidebar, .main { padding: 14px; }
-      .hero, .viewer { border-radius: 22px; }
-      .viewer-topbar, .hero { padding: 16px; }
-      .content-shell { padding: 24px 18px 56px; }
-      .hero h2 { font-size: 26px; }
+      .hero, .viewer { border-radius: 24px; }
+      .hero, .viewer-topbar { padding: 16px; }
+      .content-shell { padding: 22px 18px 62px; }
       .brand h1 { font-size: 24px; }
+      .hero h2 { font-size: 28px; }
     }
   </style>
 </head>
@@ -639,19 +739,19 @@
   <div class="app">
     <aside class="sidebar" id="sidebar">
       <div class="brand">
-        <div class="eyebrow">Markdown Viewer</div>
+        <div class="eyebrow">Markdown Docs</div>
         <h1>gstack SKILL<br />繁體中文翻譯</h1>
-        <p>左側挑文件，右側直接顯示漂亮版 markdown。黑白主題、捲軸、字體與內文樣式都統一控制。</p>
+        <p>把這個專案整理成真正的 md 文件站：左側分類導覽、中間舒適閱讀、右側章節目錄。</p>
       </div>
 
       <div class="toolbar">
         <button class="btn primary" id="themeToggle" type="button">切換黑白主題</button>
-        <button class="btn mobile-tools" id="menuToggle" type="button">收合選單</button>
+        <button class="btn mobile-toggle" id="menuToggle" type="button">收合選單</button>
       </div>
 
-      <input id="search" class="search" type="search" placeholder="搜尋文件，例如 qa / design / deploy" autocomplete="off" />
+      <input id="search" class="search" type="search" placeholder="搜尋文件，例如 qa / plan / deploy" autocomplete="off" />
 
-      <div class="sidebar-meta">
+      <div class="stats">
         <div class="stat"><strong id="docCount">0</strong><span>文件數量</span></div>
         <div class="stat"><strong id="groupCount">0</strong><span>分類區塊</span></div>
       </div>
@@ -663,7 +763,11 @@
       <section class="hero">
         <div>
           <h2 id="docTitle">載入中…</h2>
-          <p id="docSubtitle">準備把這個專案改成真正好看的 md 顯示器。</p>
+          <p id="docSubtitle">正在把它變成更像 VitePress / Obsidian 的閱讀體驗。</p>
+          <div class="hero-badges">
+            <span class="badge-pill" id="docCategory">Category</span>
+            <span class="badge-pill" id="docMeta">0 words</span>
+          </div>
         </div>
         <div class="hero-actions">
           <a class="btn" id="githubBtn" href="#" target="_blank" rel="noreferrer">GitHub</a>
@@ -673,24 +777,35 @@
 
       <section class="viewer">
         <div class="viewer-topbar">
-          <div class="left">
+          <div class="viewer-left">
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <div class="doc-meta">
+            <div class="viewer-meta">
               <strong id="viewerName">載入中…</strong>
-              <span id="viewerMeta">讀取 markdown 中</span>
+              <span id="viewerMeta">rendering markdown</span>
             </div>
           </div>
         </div>
-        <div class="viewer-body">
+        <div class="viewer-scroll" id="viewerScroll">
           <div class="content-shell">
             <article id="content" class="markdown-body"></article>
-            <div class="footer-note">本站以同一套前端樣式直接渲染 markdown，不再依賴 GitHub Pages 預設內容頁樣式。</div>
+            <div class="footer-note">這個頁面現在是直接抓 raw markdown 後在前端渲染，因此黑白主題、捲軸、字距、表格與 code block 都能完整一致。</div>
           </div>
         </div>
       </section>
     </main>
+
+    <aside class="toc">
+      <div class="toc-card">
+        <div class="toc-title">On this page</div>
+        <h3>章節目錄</h3>
+        <p>右側會跟著目前文件內容更新，點一下可以直接跳段落。</p>
+        <div class="toc-wrap">
+          <nav class="toc-links" id="tocLinks"></nav>
+        </div>
+      </div>
+    </aside>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -726,33 +841,40 @@
       'setup-browser-cookies-SKILL.zh-TW.md',
       'setup-deploy-SKILL.zh-TW.md',
       'ship-SKILL.zh-TW.md',
-      'unfreeze-SKILL.zh-TW.md',
+      'unfreeze-SKILL.zh-TW.md'
     ];
 
     const els = {
       sidebar: document.getElementById('sidebar'),
       navWrap: document.getElementById('navWrap'),
       content: document.getElementById('content'),
+      viewerScroll: document.getElementById('viewerScroll'),
+      tocLinks: document.getElementById('tocLinks'),
       search: document.getElementById('search'),
       themeToggle: document.getElementById('themeToggle'),
       menuToggle: document.getElementById('menuToggle'),
       docTitle: document.getElementById('docTitle'),
       docSubtitle: document.getElementById('docSubtitle'),
+      docCategory: document.getElementById('docCategory'),
+      docMeta: document.getElementById('docMeta'),
       viewerName: document.getElementById('viewerName'),
       viewerMeta: document.getElementById('viewerMeta'),
       githubBtn: document.getElementById('githubBtn'),
       rawBtn: document.getElementById('rawBtn'),
       docCount: document.getElementById('docCount'),
-      groupCount: document.getElementById('groupCount'),
+      groupCount: document.getElementById('groupCount')
     };
 
     const state = {
       active: null,
-      query: '',
       filtered: [...DOCS],
+      headings: [],
+      activeHeading: null
     };
 
-    marked.setOptions({ gfm: true, breaks: false, headerIds: true, mangle: false });
+    let tocObserver = null;
+
+    marked.setOptions({ gfm: true, breaks: false, headerIds: false, mangle: false });
 
     function rawUrl(name) {
       return `https://raw.githubusercontent.com/${REPO}/${BRANCH}/docs/${encodeURIComponent(name)}`;
@@ -763,19 +885,24 @@
     }
 
     function prettyName(name) {
-      return name.replace(/\.md$/i, '').replace(/-/g, ' ').replace(/\bSKILL\b/g, 'Skill');
+      return name
+        .replace(/\.md$/i, '')
+        .replace(/\.zh-TW$/i, '')
+        .replace(/-/g, ' ')
+        .replace(/\bSKILL\b/g, 'Skill');
     }
 
     function classify(name) {
       if (name === 'SKILL.zh-TW.md') return 'Core';
       if (name.startsWith('plan-') || name.startsWith('autoplan')) return 'Planning';
-      if (name.includes('review') || name.startsWith('qa') || name.startsWith('retro')) return 'Review';
-      if (name.includes('deploy') || name.includes('ship') || name.includes('freeze') || name.includes('release') || name.includes('canary') || name.includes('browse')) return 'Delivery';
+      if (name.startsWith('qa') || name.includes('review') || name.startsWith('retro')) return 'Review';
+      if (name.includes('deploy') || name.includes('ship') || name.includes('freeze') || name.includes('release') || name.includes('canary')) return 'Delivery';
+      if (name.includes('browse') || name.includes('guard') || name.includes('careful') || name.includes('codex')) return 'Workflow';
       return 'General';
     }
 
     function groupDocs(list) {
-      const order = ['Core', 'Planning', 'Review', 'Delivery', 'General'];
+      const order = ['Core', 'Planning', 'Review', 'Delivery', 'Workflow', 'General'];
       const grouped = new Map(order.map(group => [group, []]));
       list.forEach(name => grouped.get(classify(name)).push(name));
       return [...grouped.entries()].filter(([, items]) => items.length > 0);
@@ -804,10 +931,6 @@
       return `${words} words · 約 ${mins} 分鐘`;
     }
 
-    function escapeHtml(text) {
-      return text.replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-    }
-
     function renderLoading() {
       els.content.innerHTML = `
         <div class="loading" aria-hidden="true">
@@ -819,12 +942,101 @@
       `;
     }
 
-    function renderEmpty(message) {
-      els.content.innerHTML = `<div class="empty">${message}</div>`;
+    function renderEmpty(target, message) {
+      target.innerHTML = `<div class="empty">${message}</div>`;
+    }
+
+    function slugify(text, index) {
+      const base = text
+        .toLowerCase()
+        .trim()
+        .replace(/<[^>]+>/g, '')
+        .replace(/[^\p{Letter}\p{Number}\s-]/gu, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+      return base || `section-${index + 1}`;
+    }
+
+    function enhanceLinks() {
+      els.content.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        if (/^https?:\/\//i.test(href)) {
+          link.target = '_blank';
+          link.rel = 'noreferrer noopener';
+        }
+      });
+    }
+
+    function collectHeadings() {
+      const found = [...els.content.querySelectorAll('h1, h2, h3')];
+      const seen = new Set();
+      state.headings = found.map((heading, index) => {
+        let id = heading.id || slugify(heading.textContent || '', index);
+        while (seen.has(id)) id = `${id}-${index + 1}`;
+        seen.add(id);
+        heading.id = id;
+        return {
+          id,
+          text: (heading.textContent || '').trim(),
+          level: Number(heading.tagName[1]),
+          el: heading
+        };
+      });
+    }
+
+    function renderTOC() {
+      if (!state.headings.length) {
+        return renderEmpty(els.tocLinks, '這份文件沒有可列出的章節。');
+      }
+      els.tocLinks.innerHTML = state.headings
+        .filter(item => item.level <= 3)
+        .map(item => `
+          <a class="toc-link level-${item.level}" href="#${item.id}" data-id="${item.id}">${item.text}</a>
+        `)
+        .join('');
+
+      els.tocLinks.querySelectorAll('.toc-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault();
+          const id = link.dataset.id;
+          const target = state.headings.find(h => h.id === id)?.el;
+          if (!target) return;
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          setActiveTOC(id);
+        });
+      });
+    }
+
+    function setActiveTOC(id) {
+      state.activeHeading = id;
+      els.tocLinks.querySelectorAll('.toc-link').forEach(link => {
+        link.classList.toggle('active', link.dataset.id === id);
+      });
+    }
+
+    function bindTOCObserver() {
+      if (tocObserver) tocObserver.disconnect();
+      const headings = state.headings.filter(item => item.level <= 3).map(item => item.el);
+      if (!headings.length) return;
+
+      tocObserver = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter(entry => entry.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]?.target?.id) setActiveTOC(visible[0].target.id);
+      }, {
+        root: els.viewerScroll,
+        rootMargin: '0px 0px -72% 0px',
+        threshold: [0, 1]
+      });
+
+      headings.forEach(h => tocObserver.observe(h));
+      setActiveTOC(state.headings[0].id);
     }
 
     function activateNav(name) {
-      document.querySelectorAll('.nav-item').forEach(btn => {
+      els.navWrap.querySelectorAll('.nav-item').forEach(btn => {
         btn.classList.toggle('active', btn.dataset.name === name);
       });
     }
@@ -834,14 +1046,16 @@
       els.docCount.textContent = state.filtered.length;
       els.groupCount.textContent = groups.length;
 
-      if (state.filtered.length === 0) {
-        els.navWrap.innerHTML = '<div class="empty">找不到符合條件的文件。</div>';
-        return;
+      if (!state.filtered.length) {
+        return renderEmpty(els.navWrap, '找不到符合條件的文件。');
       }
 
       els.navWrap.innerHTML = groups.map(([group, items]) => `
-        <section>
-          <h3 class="group-title">${group}</h3>
+        <section class="nav-section">
+          <div class="section-head">
+            <span>${group}</span>
+            <span class="count">${items.length}</span>
+          </div>
           <div class="nav-group">
             ${items.map(name => `
               <button class="nav-item ${state.active === name ? 'active' : ''}" type="button" data-name="${name}">
@@ -849,7 +1063,7 @@
                   <span class="nav-label">${name}</span>
                   <span class="nav-sub">${prettyName(name)}</span>
                 </span>
-                <span class="nav-badge">md</span>
+                <span class="nav-badge">${classify(name)}</span>
               </button>
             `).join('')}
           </div>
@@ -865,12 +1079,15 @@
       state.active = name;
       activateNav(name);
       renderLoading();
-      els.docTitle.textContent = name;
-      els.docSubtitle.textContent = '正在讀取 markdown 內容…';
+      els.docTitle.textContent = prettyName(name);
+      els.docSubtitle.textContent = '正在載入 markdown 內容…';
+      els.docCategory.textContent = classify(name);
+      els.docMeta.textContent = '讀取中';
       els.viewerName.textContent = name;
       els.viewerMeta.textContent = 'fetching raw markdown';
       els.githubBtn.href = githubUrl(name);
       els.rawBtn.href = rawUrl(name);
+      renderEmpty(els.tocLinks, '正在分析章節目錄…');
       if (pushHash) history.replaceState(null, '', '#' + encodeURIComponent(name));
 
       try {
@@ -878,32 +1095,39 @@
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const raw = await res.text();
         const body = stripFrontmatter(raw).trim();
-        const html = window.marked ? marked.parse(body) : `<pre>${escapeHtml(body)}</pre>`;
+        const html = window.marked ? marked.parse(body) : `<pre>${body}</pre>`;
         els.content.innerHTML = window.DOMPurify ? DOMPurify.sanitize(html) : html;
+        enhanceLinks();
+        collectHeadings();
+        renderTOC();
+        bindTOCObserver();
         els.docTitle.textContent = prettyName(name);
-        els.docSubtitle.textContent = '真正的 markdown 內頁渲染，主題與版面完全一致。';
+        els.docSubtitle.textContent = '更像正式文件站的閱讀版面：分類導覽、舒適正文、右側章節目錄。';
+        els.docMeta.textContent = readingMeta(body);
         els.viewerName.textContent = name;
         els.viewerMeta.textContent = readingMeta(body);
-        document.querySelector('.viewer-body')?.scrollTo({ top: 0, behavior: 'instant' });
-        if (window.innerWidth <= 900) {
-          els.sidebar.classList.add('collapsed');
-        }
+        els.viewerScroll.scrollTo({ top: 0, behavior: 'instant' });
+        if (window.innerWidth <= 920) els.sidebar.classList.add('collapsed');
       } catch (err) {
-        renderEmpty(`讀取失敗：${err.message}`);
+        renderEmpty(els.content, `讀取失敗：${err.message}`);
+        renderEmpty(els.tocLinks, '無法產生目錄。');
         els.docSubtitle.textContent = '檔案載入失敗';
+        els.docMeta.textContent = 'load failed';
         els.viewerMeta.textContent = 'load failed';
       }
     }
 
     function applyFilter() {
       const q = els.search.value.trim().toLowerCase();
-      state.query = q;
       state.filtered = DOCS.filter(name => name.toLowerCase().includes(q));
       renderNav();
       if (!state.filtered.includes(state.active) && state.filtered[0]) {
         loadDoc(state.filtered[0], false);
       }
-      if (state.filtered.length === 0) renderEmpty('找不到符合條件的文件。');
+      if (!state.filtered.length) {
+        renderEmpty(els.content, '找不到符合條件的文件。');
+        renderEmpty(els.tocLinks, '沒有可顯示的章節。');
+      }
     }
 
     initTheme();
@@ -924,7 +1148,7 @@
         e.preventDefault();
         els.search.focus();
       }
-      if (e.key === 'Escape' && window.innerWidth <= 900) {
+      if (e.key === 'Escape' && window.innerWidth <= 920) {
         els.sidebar.classList.add('collapsed');
       }
     });
