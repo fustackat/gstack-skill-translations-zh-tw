@@ -27,19 +27,9 @@ fi
 # Prepare docs folder for Pages
 mkdir -p docs
 cp -n ./*.md docs/ || true
-# Create index
-cat > docs/index.md <<'INDEX'
-# gstack SKILL 繁體中文翻譯
-
-以下為專案中各 SKILL 的繁體中文說明（保留 code blocks 原文）。
-
-INDEX
-for f in docs/*.md; do
-  base=$(basename "$f")
-  [ "$base" = "index.md" ] && continue
-  echo "- [${base}](./${base})" >> docs/index.md
-done
-
+# The GitHub Pages homepage is the committed docs/index.html shell.
+# Keep this deploy script from regenerating docs/index.md so it cannot
+# compete with the custom homepage for the root route.
 git add docs
 
 # Commit any changes
