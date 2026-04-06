@@ -630,6 +630,7 @@
       localStorage.setItem('gstack-theme', theme);
       els.themeToggle.textContent = theme === 'dark' ? '切換白色主題' : '切換黑色主題';
       syncViewerTheme();
+      setTimeout(syncViewerTheme, 120);
     }
 
     function toggleTheme() {
@@ -669,6 +670,7 @@
       els.currentTitle.textContent = name;
       els.currentDesc.textContent = `正在閱讀：${titleFrom(name)}。`;
       els.viewer.src = url;
+      setTimeout(syncViewerTheme, 120);
       if (pushHash) {
         history.replaceState(null, '', '#'+encodeURIComponent(name));
       }
