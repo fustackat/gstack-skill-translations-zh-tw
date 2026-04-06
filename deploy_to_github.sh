@@ -26,7 +26,7 @@ fi
 
 # Prepare docs folder for Pages
 mkdir -p docs
-cp -n *.SKILL.zh-TW.md docs/ || true
+cp -n ./*.md docs/ || true
 # Create index
 cat > docs/index.md <<'INDEX'
 # gstack SKILL 繁體中文翻譯
@@ -34,8 +34,10 @@ cat > docs/index.md <<'INDEX'
 以下為專案中各 SKILL 的繁體中文說明（保留 code blocks 原文）。
 
 INDEX
-for f in *.SKILL.zh-TW.md; do
-  echo "- [${f}](./${f})" >> docs/index.md
+for f in docs/*.md; do
+  base=$(basename "$f")
+  [ "$base" = "index.md" ] && continue
+  echo "- [${base}](./${base})" >> docs/index.md
 done
 
 git add docs
