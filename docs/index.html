@@ -7,56 +7,66 @@
   <title>gstack SKILL 繁體中文翻譯</title>
   <style>
     :root {
-      --bg: #f5f5f2;
-      --panel: rgba(255, 255, 255, 0.8);
-      --panel-strong: #ffffff;
-      --text: #111111;
-      --muted: #616161;
-      --border: rgba(17, 17, 17, 0.12);
-      --shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-      --accent: #111111;
-      --accent-2: #555555;
-      --hover: rgba(17, 17, 17, 0.06);
-      --active: #111111;
-      --active-text: #ffffff;
-      --scroll-track: #ecebe6;
-      --scroll-thumb: #b4b1a8;
+      --bg: #f3f1ec;
+      --bg-elev: rgba(255,255,255,0.74);
+      --panel: #ffffff;
+      --panel-2: #f8f6f1;
+      --text: #121212;
+      --muted: #6b675f;
+      --line: rgba(18,18,18,0.10);
+      --line-strong: rgba(18,18,18,0.16);
+      --accent: #151515;
+      --accent-soft: #efede8;
+      --shadow: 0 16px 50px rgba(0,0,0,0.08);
+      --shadow-soft: 0 10px 28px rgba(0,0,0,0.05);
+      --code-bg: #f2efe8;
+      --quote-bg: #f7f4ee;
+      --table-head: #f6f4ef;
+      --scroll-track: #ece8df;
+      --scroll-thumb: #b8b1a3;
+      --link: #114eb8;
+      --maxw: 980px;
     }
 
     html[data-theme="dark"] {
-      --bg: #0d0d0d;
-      --panel: rgba(22, 22, 22, 0.92);
-      --panel-strong: #161616;
-      --text: #f3f3f3;
-      --muted: #a7a7a7;
-      --border: rgba(255, 255, 255, 0.12);
-      --shadow: 0 24px 72px rgba(0, 0, 0, 0.45);
-      --accent: #f3f3f3;
-      --accent-2: #bbbbbb;
-      --hover: rgba(255, 255, 255, 0.08);
-      --active: #f3f3f3;
-      --active-text: #111111;
-      --scroll-track: #121212;
-      --scroll-thumb: #5f5f5f;
+      --bg: #0c0c0d;
+      --bg-elev: rgba(19,19,20,0.78);
+      --panel: #151516;
+      --panel-2: #1a1a1c;
+      --text: #f4f4f4;
+      --muted: #a4a4a8;
+      --line: rgba(255,255,255,0.10);
+      --line-strong: rgba(255,255,255,0.16);
+      --accent: #f5f5f5;
+      --accent-soft: #202023;
+      --shadow: 0 24px 72px rgba(0,0,0,0.45);
+      --shadow-soft: 0 14px 32px rgba(0,0,0,0.28);
+      --code-bg: #1d1d20;
+      --quote-bg: #18181a;
+      --table-head: #1b1b1d;
+      --scroll-track: #131316;
+      --scroll-thumb: #5a5a61;
+      --link: #88b4ff;
     }
 
     * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background:
-        radial-gradient(circle at top left, rgba(127, 127, 127, 0.18), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(127, 127, 127, 0.12), transparent 24%),
-        var(--bg);
-      color: var(--text);
-      transition: background 180ms ease, color 180ms ease;
+    html, body { min-height: 100%; }
+
+    html {
       scrollbar-width: thin;
       scrollbar-color: var(--scroll-thumb) var(--scroll-track);
     }
 
-    a { color: inherit; text-decoration: none; }
-    button, input { font: inherit; }
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(122,122,122,0.16), transparent 26%),
+        radial-gradient(circle at bottom right, rgba(122,122,122,0.10), transparent 22%),
+        var(--bg);
+      transition: background 180ms ease, color 180ms ease;
+    }
 
     * {
       scrollbar-width: thin;
@@ -78,664 +88,850 @@
       border-radius: 999px;
     }
 
-    .shell {
-      display: grid;
-      grid-template-columns: 340px minmax(0, 1fr);
+    a { color: var(--link); }
+    button, input { font: inherit; }
+
+    .app {
       min-height: 100vh;
+      display: grid;
+      grid-template-columns: 320px minmax(0, 1fr);
     }
 
     .sidebar {
       position: sticky;
       top: 0;
       height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
       padding: 20px;
-      border-right: 1px solid var(--border);
-      background: var(--panel);
+      border-right: 1px solid var(--line);
+      background: var(--bg-elev);
       backdrop-filter: blur(18px);
       -webkit-backdrop-filter: blur(18px);
-      overflow: hidden;
+    }
+
+    .brand {
+      padding: 4px 2px 2px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--panel);
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .brand h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+    }
+
+    .brand p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 14px;
+    }
+
+    .toolbar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn, .search {
+      border: 1px solid var(--line);
+      background: var(--panel);
+      color: var(--text);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn {
+      border-radius: 14px;
+      padding: 10px 14px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 120ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn.primary {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+    }
+
+    .search {
+      width: 100%;
+      border-radius: 16px;
+      padding: 13px 14px;
+      outline: none;
+    }
+
+    .search:focus {
+      border-color: var(--line-strong);
+      box-shadow: 0 0 0 4px rgba(127,127,127,0.10), var(--shadow-soft);
+    }
+
+    .sidebar-meta {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .stat {
+      padding: 12px 14px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--panel);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 18px;
+      letter-spacing: -0.03em;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .nav-wrap {
+      min-height: 0;
+      overflow: auto;
+      padding-right: 2px;
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
 
-    .brand {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 8px 4px 0;
-    }
-
-    .brand h1 {
-      margin: 0;
-      font-size: 22px;
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-    }
-
-    .brand p {
-      margin: 8px 0 0;
+    .group-title {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+      margin: 0 0 8px;
+      padding: 8px 2px;
+      font-size: 12px;
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-      max-width: 26ch;
-    }
-
-    .toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .chip, .theme-toggle, .menu-toggle {
-      border: 1px solid var(--border);
-      background: var(--panel-strong);
-      color: var(--text);
-      border-radius: 999px;
-      padding: 10px 14px;
-      cursor: pointer;
-      transition: transform 120ms ease, background 180ms ease, border-color 180ms ease, color 180ms ease;
-      box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset;
-    }
-
-    .chip:hover, .theme-toggle:hover, .menu-toggle:hover, .nav-item:hover {
-      transform: translateY(-1px);
-    }
-
-    .meta-card {
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 14px;
-      background: linear-gradient(180deg, rgba(255,255,255,0.12), transparent), var(--panel-strong);
-    }
-
-    .meta-title {
-      margin: 0 0 6px;
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: var(--muted);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      background: linear-gradient(180deg, var(--bg-elev), rgba(0,0,0,0));
     }
 
-    .meta-body {
-      margin: 0;
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--text);
-    }
-
-    .search {
-      width: 100%;
-      border: 1px solid var(--border);
-      background: var(--panel-strong);
-      color: var(--text);
-      border-radius: 16px;
-      padding: 14px 16px;
-      outline: none;
-      transition: border-color 180ms ease, box-shadow 180ms ease;
-    }
-
-    .search:focus {
-      border-color: rgba(127,127,127,0.5);
-      box-shadow: 0 0 0 4px rgba(127,127,127,0.12);
-    }
-
-    .nav {
-      flex: 1;
-      overflow: auto;
-      padding-right: 4px;
+    .nav-group {
       display: grid;
       gap: 8px;
     }
 
     .nav-item {
+      width: 100%;
+      text-align: left;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      width: 100%;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text);
+      border: 1px solid var(--line);
       border-radius: 16px;
-      padding: 13px 14px;
-      text-align: left;
+      background: transparent;
+      color: inherit;
+      padding: 12px 13px;
       cursor: pointer;
-      transition: background 180ms ease, border-color 180ms ease, transform 120ms ease, color 180ms ease;
+      transition: transform 120ms ease, border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
     }
 
-    .nav-item .label {
-      display: block;
-      font-weight: 600;
-      font-size: 14px;
-      letter-spacing: -0.01em;
-    }
-
-    .nav-item .sub {
-      display: block;
-      margin-top: 3px;
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .nav-item .badge {
-      flex: none;
-      border-radius: 999px;
-      padding: 5px 8px;
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      border: 1px solid var(--border);
+    .nav-item:hover {
+      transform: translateY(-1px);
+      background: var(--accent-soft);
     }
 
     .nav-item.active {
-      background: var(--active);
-      color: var(--active-text);
-      border-color: var(--active);
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
       box-shadow: var(--shadow);
     }
 
-    .nav-item.active .sub,
-    .nav-item.active .badge {
+    .nav-item.active .nav-sub,
+    .nav-item.active .nav-badge {
       color: inherit;
-      border-color: rgba(255,255,255,0.18);
+      opacity: 0.88;
     }
 
-    .sidebar-footer {
+    .nav-main {
+      min-width: 0;
+    }
+
+    .nav-label {
+      display: block;
+      font-weight: 650;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      word-break: break-word;
+    }
+
+    .nav-sub {
+      display: block;
+      margin-top: 4px;
       font-size: 12px;
       color: var(--muted);
-      line-height: 1.6;
-      border-top: 1px solid var(--border);
-      padding-top: 12px;
     }
 
-    .content {
+    .nav-badge {
+      flex: none;
+      font-size: 11px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .main {
       min-width: 0;
-      padding: 20px;
-      display: grid;
-      grid-template-rows: auto minmax(0, 1fr);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
       gap: 16px;
+    }
+
+    .hero, .viewer {
+      border: 1px solid var(--line);
+      background: var(--bg-elev);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: var(--shadow);
     }
 
     .hero {
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      background: var(--panel);
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-      box-shadow: var(--shadow);
-      padding: 18px 20px;
+      border-radius: 28px;
+      padding: 22px 24px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
       gap: 16px;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
     }
 
     .hero h2 {
-      margin: 0 0 6px;
-      font-size: 24px;
-      letter-spacing: -0.04em;
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.03;
+      letter-spacing: -0.06em;
     }
 
     .hero p {
-      margin: 0;
+      margin: 10px 0 0;
       color: var(--muted);
-      line-height: 1.5;
-      font-size: 14px;
+      line-height: 1.65;
+      font-size: 15px;
+      max-width: 60ch;
     }
 
-    .actions {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       justify-content: flex-end;
     }
 
-    .frame-shell {
+    .viewer {
+      flex: 1;
       min-height: 0;
-      border: 1px solid var(--border);
-      border-radius: 28px;
+      border-radius: 30px;
       overflow: hidden;
-      background: var(--panel-strong);
-      box-shadow: var(--shadow);
-      position: relative;
+      display: flex;
+      flex-direction: column;
     }
 
-    iframe {
-      width: 100%;
-      height: 100%;
-      min-height: calc(100vh - 170px);
-      border: 0;
-      background: var(--bg);
+    .viewer-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(127,127,127,0.06), transparent), var(--panel);
     }
 
-    .frame-topbar {
-      position: absolute;
-      inset: 0 0 auto 0;
-      height: 12px;
-      background: linear-gradient(90deg, #111, #777 50%, #bbb 100%);
-      opacity: 0.08;
-      pointer-events: none;
+    .viewer-topbar .left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
     }
 
-    .empty-state {
-      position: absolute;
-      inset: 0;
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--muted);
+      opacity: 0.4;
+    }
+
+    .doc-meta {
+      min-width: 0;
+    }
+
+    .doc-meta strong,
+    .doc-meta span {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .doc-meta strong { font-size: 14px; }
+    .doc-meta span { font-size: 12px; color: var(--muted); }
+
+    .viewer-body {
+      flex: 1;
+      min-height: 0;
+      overflow: auto;
+      background: var(--panel);
+      padding: 0;
+    }
+
+    .content-shell {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 34px 28px 80px;
+    }
+
+    .loading {
+      color: var(--muted);
       display: grid;
-      place-items: center;
-      padding: 24px;
+      gap: 12px;
+    }
+
+    .loading .bar {
+      height: 14px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent-soft), var(--panel-2), var(--accent-soft));
+      background-size: 220% 100%;
+      animation: shimmer 1.35s linear infinite;
+    }
+
+    .loading .bar:nth-child(1) { width: 46%; height: 22px; }
+    .loading .bar:nth-child(2) { width: 92%; }
+    .loading .bar:nth-child(3) { width: 86%; }
+    .loading .bar:nth-child(4) { width: 78%; }
+
+    @keyframes shimmer {
+      from { background-position: 200% 0; }
+      to { background-position: -20% 0; }
+    }
+
+    .markdown-body {
+      color: var(--text);
+      line-height: 1.82;
+      font-size: 16px;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      word-break: break-word;
+    }
+
+    .markdown-body > *:first-child { margin-top: 0 !important; }
+    .markdown-body > *:last-child { margin-bottom: 0 !important; }
+
+    .markdown-body h1,
+    .markdown-body h2,
+    .markdown-body h3,
+    .markdown-body h4,
+    .markdown-body h5,
+    .markdown-body h6 {
+      color: var(--text);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+      margin: 1.5em 0 0.56em;
+      scroll-margin-top: 24px;
+    }
+
+    .markdown-body h1 { font-size: 2.3em; }
+    .markdown-body h2 {
+      font-size: 1.72em;
+      padding-bottom: 0.36em;
+      border-bottom: 1px solid var(--line);
+    }
+    .markdown-body h3 { font-size: 1.34em; }
+    .markdown-body h4 { font-size: 1.12em; }
+
+    .markdown-body p,
+    .markdown-body ul,
+    .markdown-body ol,
+    .markdown-body pre,
+    .markdown-body blockquote,
+    .markdown-body table,
+    .markdown-body hr {
+      margin: 1.05em 0;
+    }
+
+    .markdown-body ul,
+    .markdown-body ol {
+      padding-left: 1.4em;
+    }
+
+    .markdown-body li { margin: 0.34em 0; }
+
+    .markdown-body a {
+      color: var(--link);
+      text-underline-offset: 0.18em;
+      text-decoration-thickness: 0.08em;
+    }
+
+    .markdown-body hr {
+      border: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .markdown-body code {
+      background: var(--code-bg);
+      padding: 0.16em 0.42em;
+      border-radius: 8px;
+      font-size: 0.94em;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    .markdown-body pre {
+      overflow: auto;
+      background: var(--code-bg);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 16px 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .markdown-body pre code {
+      background: transparent;
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.92em;
+    }
+
+    .markdown-body blockquote {
+      margin-left: 0;
+      margin-right: 0;
+      padding: 14px 18px;
+      border-left: 4px solid var(--line-strong);
+      background: var(--quote-bg);
+      border-radius: 16px;
+      color: var(--muted);
+    }
+
+    .markdown-body table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    .markdown-body th,
+    .markdown-body td {
+      padding: 12px 14px;
+      vertical-align: top;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+      border-right: 1px solid var(--line);
+    }
+
+    .markdown-body th {
+      background: var(--table-head);
+      font-weight: 650;
+    }
+
+    .markdown-body tr:last-child td { border-bottom: 0; }
+    .markdown-body th:last-child,
+    .markdown-body td:last-child { border-right: 0; }
+
+    .markdown-body img,
+    .markdown-body svg,
+    .markdown-body video,
+    .markdown-body canvas {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .markdown-body details {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 12px 14px;
+      background: var(--panel-2);
+    }
+
+    .markdown-body summary {
+      cursor: pointer;
+      font-weight: 650;
+    }
+
+    .empty {
       color: var(--muted);
       text-align: center;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 180ms ease;
+      padding: 54px 24px;
+      border: 1px dashed var(--line-strong);
+      border-radius: 20px;
+      background: var(--panel-2);
     }
 
-    .empty-state.show { opacity: 1; }
+    .footer-note {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
 
-    .mobile-toggle {
+    .mobile-tools {
       display: none;
     }
 
-    @media (max-width: 980px) {
-      .shell { grid-template-columns: 1fr; }
+    @media (max-width: 1080px) {
+      .app { grid-template-columns: 300px minmax(0, 1fr); }
+      .hero h2 { font-size: 30px; }
+    }
+
+    @media (max-width: 900px) {
+      .app { grid-template-columns: 1fr; }
       .sidebar {
         position: relative;
         height: auto;
         border-right: 0;
-        border-bottom: 1px solid var(--border);
+        border-bottom: 1px solid var(--line);
       }
-      .content { padding-top: 0; }
-      iframe { min-height: 72vh; }
-      .mobile-toggle { display: inline-flex; }
-      .sidebar.collapsed .nav,
+      .main { padding-top: 0; }
+      .mobile-tools { display: inline-flex; }
+      .sidebar.collapsed .nav-wrap,
       .sidebar.collapsed .search,
-      .sidebar.collapsed .meta-card,
-      .sidebar.collapsed .sidebar-footer { display: none; }
+      .sidebar.collapsed .sidebar-meta { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .sidebar, .main { padding: 14px; }
+      .hero, .viewer { border-radius: 22px; }
+      .viewer-topbar, .hero { padding: 16px; }
+      .content-shell { padding: 24px 18px 56px; }
+      .hero h2 { font-size: 26px; }
+      .brand h1 { font-size: 24px; }
     }
   </style>
 </head>
 <body>
-  <div class="shell">
+  <div class="app">
     <aside class="sidebar" id="sidebar">
       <div class="brand">
-        <div>
-          <h1>gstack SKILL<br />繁體中文翻譯</h1>
-          <p>左側點選文件，右側即時切換預覽。支援黑白主題。</p>
-        </div>
-        <button class="menu-toggle mobile-toggle" id="menuToggle" type="button">選單</button>
+        <div class="eyebrow">Markdown Viewer</div>
+        <h1>gstack SKILL<br />繁體中文翻譯</h1>
+        <p>左側挑文件，右側直接顯示漂亮版 markdown。黑白主題、捲軸、字體與內文樣式都統一控制。</p>
       </div>
 
       <div class="toolbar">
-        <button class="theme-toggle" id="themeToggle" type="button">切換黑白主題</button>
-        <a class="chip" id="openExternal" href="#" target="_blank" rel="noreferrer">另開分頁</a>
+        <button class="btn primary" id="themeToggle" type="button">切換黑白主題</button>
+        <button class="btn mobile-tools" id="menuToggle" type="button">收合選單</button>
       </div>
 
-      <div class="meta-card">
-        <div class="meta-title">導航說明</div>
-        <p class="meta-body">點左邊文件名稱即可載入右側閱讀區。搜尋框可快速過濾檔案。</p>
+      <input id="search" class="search" type="search" placeholder="搜尋文件，例如 qa / design / deploy" autocomplete="off" />
+
+      <div class="sidebar-meta">
+        <div class="stat"><strong id="docCount">0</strong><span>文件數量</span></div>
+        <div class="stat"><strong id="groupCount">0</strong><span>分類區塊</span></div>
       </div>
 
-      <input id="search" class="search" type="search" placeholder="搜尋文件，例如：qa、design、deploy…" autocomplete="off" />
-
-      <nav class="nav" id="nav" aria-label="文件清單"></nav>
-
-      <div class="sidebar-footer">
-        <div><strong id="count"></strong> 個文件可讀。</div>
-        <div>預設主題會記住你的選擇。</div>
-      </div>
+      <div class="nav-wrap" id="navWrap"></div>
     </aside>
 
-    <main class="content">
+    <main class="main">
       <section class="hero">
         <div>
-          <h2 id="currentTitle">載入中…</h2>
-          <p id="currentDesc">選一個文件開始閱讀。</p>
+          <h2 id="docTitle">載入中…</h2>
+          <p id="docSubtitle">準備把這個專案改成真正好看的 md 顯示器。</p>
         </div>
-        <div class="actions">
-          <button class="chip" id="prevBtn" type="button">上一個</button>
-          <button class="chip" id="nextBtn" type="button">下一個</button>
+        <div class="hero-actions">
+          <a class="btn" id="githubBtn" href="#" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" id="rawBtn" href="#" target="_blank" rel="noreferrer">Raw</a>
         </div>
       </section>
 
-      <section class="frame-shell">
-        <div class="frame-topbar"></div>
-        <iframe id="viewer" name="viewer" title="文件閱讀區" loading="eager"></iframe>
-        <div class="empty-state" id="emptyState">找不到符合條件的文件。</div>
+      <section class="viewer">
+        <div class="viewer-topbar">
+          <div class="left">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <div class="doc-meta">
+              <strong id="viewerName">載入中…</strong>
+              <span id="viewerMeta">讀取 markdown 中</span>
+            </div>
+          </div>
+        </div>
+        <div class="viewer-body">
+          <div class="content-shell">
+            <article id="content" class="markdown-body"></article>
+            <div class="footer-note">本站以同一套前端樣式直接渲染 markdown，不再依賴 GitHub Pages 預設內容頁樣式。</div>
+          </div>
+        </div>
       </section>
     </main>
   </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
   <script>
-    const docs = [
-      "SKILL.zh-TW.md",
-      "autoplan-SKILL.zh-TW.md",
-      "benchmark-SKILL.zh-TW.md",
-      "browse-SKILL.zh-TW.md",
-      "canary-SKILL.zh-TW.md",
-      "careful-SKILL.zh-TW.md",
-      "codex-SKILL.zh-TW.md",
-      "cso-SKILL.zh-TW.md",
-      "design-consultation-SKILL.zh-TW.md",
-      "design-review-SKILL.zh-TW.md",
-      "document-release-SKILL.zh-TW.md",
-      "freeze-SKILL.zh-TW.md",
-      "gstack-upgrade-SKILL.zh-TW.md",
-      "guard-SKILL.zh-TW.md",
-      "investigate-SKILL.zh-TW.md",
-      "land-and-deploy-SKILL.zh-TW.md",
-      "office-hours-SKILL.zh-TW.md",
-      "plan-ceo-review-SKILL.zh-TW.md",
-      "plan-design-review-SKILL.zh-TW.md",
-      "plan-eng-review-SKILL.zh-TW.md",
-      "qa-SKILL.zh-TW.md",
-      "qa-only-SKILL.zh-TW.md",
-      "retro-SKILL.zh-TW.md",
-      "review-SKILL.zh-TW.md",
-      "setup-browser-cookies-SKILL.zh-TW.md",
-      "setup-deploy-SKILL.zh-TW.md",
-      "ship-SKILL.zh-TW.md",
-      "unfreeze-SKILL.zh-TW.md",
+    const REPO = 'fustackat/gstack-skill-translations-zh-tw';
+    const BRANCH = 'main';
+    const DOCS = [
+      'SKILL.zh-TW.md',
+      'autoplan-SKILL.zh-TW.md',
+      'benchmark-SKILL.zh-TW.md',
+      'browse-SKILL.zh-TW.md',
+      'canary-SKILL.zh-TW.md',
+      'careful-SKILL.zh-TW.md',
+      'codex-SKILL.zh-TW.md',
+      'cso-SKILL.zh-TW.md',
+      'design-consultation-SKILL.zh-TW.md',
+      'design-review-SKILL.zh-TW.md',
+      'document-release-SKILL.zh-TW.md',
+      'freeze-SKILL.zh-TW.md',
+      'gstack-upgrade-SKILL.zh-TW.md',
+      'guard-SKILL.zh-TW.md',
+      'investigate-SKILL.zh-TW.md',
+      'land-and-deploy-SKILL.zh-TW.md',
+      'office-hours-SKILL.zh-TW.md',
+      'plan-ceo-review-SKILL.zh-TW.md',
+      'plan-design-review-SKILL.zh-TW.md',
+      'plan-eng-review-SKILL.zh-TW.md',
+      'qa-only-SKILL.zh-TW.md',
+      'qa-SKILL.zh-TW.md',
+      'retro-SKILL.zh-TW.md',
+      'review-SKILL.zh-TW.md',
+      'setup-browser-cookies-SKILL.zh-TW.md',
+      'setup-deploy-SKILL.zh-TW.md',
+      'ship-SKILL.zh-TW.md',
+      'unfreeze-SKILL.zh-TW.md',
     ];
 
     const els = {
-      nav: document.getElementById('nav'),
-      search: document.getElementById('search'),
-      viewer: document.getElementById('viewer'),
-      currentTitle: document.getElementById('currentTitle'),
-      currentDesc: document.getElementById('currentDesc'),
-      count: document.getElementById('count'),
-      themeToggle: document.getElementById('themeToggle'),
-      openExternal: document.getElementById('openExternal'),
-      menuToggle: document.getElementById('menuToggle'),
       sidebar: document.getElementById('sidebar'),
-      emptyState: document.getElementById('emptyState'),
-      prevBtn: document.getElementById('prevBtn'),
-      nextBtn: document.getElementById('nextBtn'),
+      navWrap: document.getElementById('navWrap'),
+      content: document.getElementById('content'),
+      search: document.getElementById('search'),
+      themeToggle: document.getElementById('themeToggle'),
+      menuToggle: document.getElementById('menuToggle'),
+      docTitle: document.getElementById('docTitle'),
+      docSubtitle: document.getElementById('docSubtitle'),
+      viewerName: document.getElementById('viewerName'),
+      viewerMeta: document.getElementById('viewerMeta'),
+      githubBtn: document.getElementById('githubBtn'),
+      rawBtn: document.getElementById('rawBtn'),
+      docCount: document.getElementById('docCount'),
+      groupCount: document.getElementById('groupCount'),
     };
 
     const state = {
       active: null,
-      filtered: [...docs],
+      query: '',
+      filtered: [...DOCS],
     };
 
-    function titleFrom(name) {
-      return name.replace(/\.md$/i, '').replace(/-/g, ' ').replace(/_/g, ' ');
+    marked.setOptions({ gfm: true, breaks: false, headerIds: true, mangle: false });
+
+    function rawUrl(name) {
+      return `https://raw.githubusercontent.com/${REPO}/${BRANCH}/docs/${encodeURIComponent(name)}`;
     }
 
-    function docUrl(name) {
-      return './' + name.replace(/\.md$/i, '.html');
+    function githubUrl(name) {
+      return `https://github.com/${REPO}/blob/${BRANCH}/docs/${encodeURIComponent(name)}`;
     }
 
-    const FRAME_THEME = {
-      light: {
-        bg: '#f5f5f2',
-        fg: '#121212',
-        muted: '#5f5f5f',
-        border: 'rgba(17, 17, 17, 0.10)',
-        codeBg: 'rgba(17, 17, 17, 0.05)',
-        codeBorder: 'rgba(17, 17, 17, 0.08)',
-        link: '#0a58ca',
-        scrollTrack: '#f5f5f2',
-        scrollThumb: '#b4b1a8',
-      },
-      dark: {
-        bg: '#0d0d0d',
-        fg: '#f3f3f3',
-        muted: '#aaaaaa',
-        border: 'rgba(255, 255, 255, 0.12)',
-        codeBg: 'rgba(255, 255, 255, 0.05)',
-        codeBorder: 'rgba(255, 255, 255, 0.10)',
-        link: '#7ab7ff',
-        scrollTrack: '#0d0d0d',
-        scrollThumb: '#5d5d5d',
-      },
-    };
-
-    function currentTheme() {
-      return document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+    function prettyName(name) {
+      return name.replace(/\.md$/i, '').replace(/-/g, ' ').replace(/\bSKILL\b/g, 'Skill');
     }
 
-    function syncViewerTheme() {
-      const doc = els.viewer.contentDocument;
-      if (!doc) return;
+    function classify(name) {
+      if (name === 'SKILL.zh-TW.md') return 'Core';
+      if (name.startsWith('plan-') || name.startsWith('autoplan')) return 'Planning';
+      if (name.includes('review') || name.startsWith('qa') || name.startsWith('retro')) return 'Review';
+      if (name.includes('deploy') || name.includes('ship') || name.includes('freeze') || name.includes('release') || name.includes('canary') || name.includes('browse')) return 'Delivery';
+      return 'General';
+    }
 
-      const theme = currentTheme();
-      const colors = FRAME_THEME[theme];
-      const root = doc.documentElement;
-      const body = doc.body;
-      if (!root || !body) return;
-
-      let style = doc.getElementById('gstack-viewer-theme');
-      if (!style) {
-        style = doc.createElement('style');
-        style.id = 'gstack-viewer-theme';
-        doc.head.appendChild(style);
-      }
-
-      style.textContent = `
-        :root { color-scheme: ${theme}; }
-        html, body {
-          background: ${colors.bg} !important;
-          color: ${colors.fg} !important;
-        }
-        body {
-          max-width: 980px;
-          margin: 0 auto;
-          padding: 48px 28px 80px;
-          font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-          line-height: 1.78;
-          font-size: 16px;
-          text-rendering: optimizeLegibility;
-          -webkit-font-smoothing: antialiased;
-          scrollbar-width: thin;
-          scrollbar-color: ${colors.scrollThumb} ${colors.scrollTrack};
-        }
-        * { box-sizing: border-box; }
-        *::-webkit-scrollbar { width: 12px; height: 12px; }
-        *::-webkit-scrollbar-track { background: ${colors.scrollTrack}; }
-        *::-webkit-scrollbar-thumb {
-          background: ${colors.scrollThumb};
-          border: 3px solid ${colors.scrollTrack};
-          border-radius: 999px;
-        }
-        a {
-          color: ${colors.link} !important;
-          text-decoration-thickness: 0.08em;
-          text-underline-offset: 0.18em;
-        }
-        a:hover { opacity: 0.92; }
-        h1, h2, h3, h4, h5, h6 {
-          margin: 1.4em 0 0.55em;
-          line-height: 1.22;
-          letter-spacing: -0.03em;
-          color: ${colors.fg} !important;
-        }
-        h1 { font-size: 2.05em; }
-        h2 { font-size: 1.6em; }
-        h3 { font-size: 1.3em; }
-        p, ul, ol, pre, table, blockquote, hr { margin: 1em 0; }
-        ul, ol { padding-left: 1.35em; }
-        li { margin: 0.36em 0; }
-        hr {
-          border: 0;
-          border-top: 1px solid ${colors.border};
-        }
-        blockquote {
-          margin-left: 0;
-          margin-right: 0;
-          padding: 14px 18px;
-          border-left: 4px solid ${colors.border};
-          background: ${theme === 'dark' ? 'rgba(255, 255, 255, 0.03)' : 'rgba(17, 17, 17, 0.03)'};
-          border-radius: 14px;
-        }
-        code {
-          font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-          font-size: 0.94em;
-          background: ${colors.codeBg};
-          padding: 0.16em 0.38em;
-          border-radius: 8px;
-        }
-        pre {
-          padding: 16px 18px;
-          border-radius: 18px;
-          overflow: auto;
-          border: 1px solid ${colors.codeBorder};
-          background: ${colors.codeBg};
-          box-shadow: 0 8px 24px rgba(0, 0, 0, ${theme === 'dark' ? '0.18' : '0.05'});
-        }
-        pre code {
-          padding: 0;
-          background: transparent;
-          border-radius: 0;
-        }
-        table {
-          width: 100%;
-          border-collapse: separate;
-          border-spacing: 0;
-          border: 1px solid ${colors.border};
-          border-radius: 18px;
-          overflow: hidden;
-        }
-        th, td {
-          padding: 12px 14px;
-          border-bottom: 1px solid ${colors.border};
-          text-align: left;
-          vertical-align: top;
-        }
-        th {
-          background: ${theme === 'dark' ? 'rgba(255,255,255,0.05)' : 'rgba(17,17,17,0.04)'};
-        }
-        tr:last-child td { border-bottom: 0; }
-        img, video, svg, canvas {
-          max-width: 100%;
-          height: auto;
-          border-radius: 16px;
-        }
-        figure { margin: 1.25em 0; }
-      `;
-
-      root.setAttribute('data-theme', theme);
-      root.style.colorScheme = theme;
-      body.style.background = colors.bg;
-      body.style.color = colors.fg;
-      body.style.scrollbarColor = `${colors.scrollThumb} ${colors.scrollTrack}`;
+    function groupDocs(list) {
+      const order = ['Core', 'Planning', 'Review', 'Delivery', 'General'];
+      const grouped = new Map(order.map(group => [group, []]));
+      list.forEach(name => grouped.get(classify(name)).push(name));
+      return [...grouped.entries()].filter(([, items]) => items.length > 0);
     }
 
     function setTheme(theme) {
       document.documentElement.dataset.theme = theme;
       localStorage.setItem('gstack-theme', theme);
       els.themeToggle.textContent = theme === 'dark' ? '切換白色主題' : '切換黑色主題';
-      syncViewerTheme();
-      setTimeout(syncViewerTheme, 120);
-    }
-
-    function toggleTheme() {
-      const next = currentTheme() === 'dark' ? 'light' : 'dark';
-      setTheme(next);
-    }
-
-    function renderNav() {
-      els.nav.innerHTML = '';
-      state.filtered.forEach((name) => {
-        const btn = document.createElement('button');
-        btn.type = 'button';
-        btn.className = 'nav-item';
-        btn.dataset.name = name;
-        btn.dataset.src = docUrl(name);
-        btn.innerHTML = `
-          <span>
-            <span class="label">${name}</span>
-            <span class="sub">${titleFrom(name)}</span>
-          </span>
-          <span class="badge">md</span>
-        `;
-        btn.addEventListener('click', () => loadDoc(name, true));
-        els.nav.appendChild(btn);
-      });
-      els.count.textContent = state.filtered.length;
-      els.emptyState.classList.toggle('show', state.filtered.length === 0);
-    }
-
-    function setActive(name, pushHash = true) {
-      state.active = name;
-      [...document.querySelectorAll('.nav-item')].forEach((btn) => {
-        btn.classList.toggle('active', btn.dataset.name === name);
-      });
-      const url = docUrl(name);
-      els.openExternal.href = url;
-      els.currentTitle.textContent = name;
-      els.currentDesc.textContent = `正在閱讀：${titleFrom(name)}。`;
-      els.viewer.src = url;
-      setTimeout(syncViewerTheme, 120);
-      if (pushHash) {
-        history.replaceState(null, '', '#'+encodeURIComponent(name));
-      }
-    }
-
-    function loadDoc(name, fromUser = false) {
-      if (!docs.includes(name)) return;
-      if (fromUser && window.innerWidth <= 980) {
-        els.sidebar.classList.add('collapsed');
-      }
-      setActive(name, true);
-    }
-
-    function applyFilter() {
-      const q = els.search.value.trim().toLowerCase();
-      state.filtered = docs.filter((name) => name.toLowerCase().includes(q));
-      renderNav();
-      if (!state.filtered.includes(state.active)) {
-        const next = state.filtered[0] || null;
-        if (next) setActive(next, false);
-      }
-    }
-
-    function currentIndex() {
-      return docs.indexOf(state.active);
-    }
-
-    function step(delta) {
-      const idx = currentIndex();
-      if (idx === -1) return;
-      const next = docs[(idx + delta + docs.length) % docs.length];
-      setActive(next, true);
     }
 
     function initTheme() {
       const saved = localStorage.getItem('gstack-theme');
-      if (saved === 'dark' || saved === 'light') {
-        setTheme(saved);
-        return;
-      }
+      if (saved === 'dark' || saved === 'light') return setTheme(saved);
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
       setTheme(prefersDark ? 'dark' : 'light');
     }
 
-    els.themeToggle.addEventListener('click', toggleTheme);
-    els.search.addEventListener('input', applyFilter);
-    els.menuToggle.addEventListener('click', () => els.sidebar.classList.toggle('collapsed'));
-    els.prevBtn.addEventListener('click', () => step(-1));
-    els.nextBtn.addEventListener('click', () => step(1));
-    els.viewer.addEventListener('load', syncViewerTheme);
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && window.innerWidth <= 980) {
-        els.sidebar.classList.add('collapsed');
+    function stripFrontmatter(text) {
+      return text.replace(/^---\n[\s\S]*?\n---\n?/, '');
+    }
+
+    function readingMeta(text) {
+      const words = (text.match(/\S+/g) || []).length;
+      const mins = Math.max(1, Math.round(words / 220));
+      return `${words} words · 約 ${mins} 分鐘`;
+    }
+
+    function escapeHtml(text) {
+      return text.replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+    }
+
+    function renderLoading() {
+      els.content.innerHTML = `
+        <div class="loading" aria-hidden="true">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      `;
+    }
+
+    function renderEmpty(message) {
+      els.content.innerHTML = `<div class="empty">${message}</div>`;
+    }
+
+    function activateNav(name) {
+      document.querySelectorAll('.nav-item').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.name === name);
+      });
+    }
+
+    function renderNav() {
+      const groups = groupDocs(state.filtered);
+      els.docCount.textContent = state.filtered.length;
+      els.groupCount.textContent = groups.length;
+
+      if (state.filtered.length === 0) {
+        els.navWrap.innerHTML = '<div class="empty">找不到符合條件的文件。</div>';
+        return;
       }
-      if (e.key === 'ArrowLeft' && (e.metaKey || e.altKey)) step(-1);
-      if (e.key === 'ArrowRight' && (e.metaKey || e.altKey)) step(1);
-    });
+
+      els.navWrap.innerHTML = groups.map(([group, items]) => `
+        <section>
+          <h3 class="group-title">${group}</h3>
+          <div class="nav-group">
+            ${items.map(name => `
+              <button class="nav-item ${state.active === name ? 'active' : ''}" type="button" data-name="${name}">
+                <span class="nav-main">
+                  <span class="nav-label">${name}</span>
+                  <span class="nav-sub">${prettyName(name)}</span>
+                </span>
+                <span class="nav-badge">md</span>
+              </button>
+            `).join('')}
+          </div>
+        </section>
+      `).join('');
+
+      els.navWrap.querySelectorAll('.nav-item').forEach(btn => {
+        btn.addEventListener('click', () => loadDoc(btn.dataset.name, true));
+      });
+    }
+
+    async function loadDoc(name, pushHash = true) {
+      state.active = name;
+      activateNav(name);
+      renderLoading();
+      els.docTitle.textContent = name;
+      els.docSubtitle.textContent = '正在讀取 markdown 內容…';
+      els.viewerName.textContent = name;
+      els.viewerMeta.textContent = 'fetching raw markdown';
+      els.githubBtn.href = githubUrl(name);
+      els.rawBtn.href = rawUrl(name);
+      if (pushHash) history.replaceState(null, '', '#' + encodeURIComponent(name));
+
+      try {
+        const res = await fetch(rawUrl(name), { cache: 'no-store' });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const raw = await res.text();
+        const body = stripFrontmatter(raw).trim();
+        const html = window.marked ? marked.parse(body) : `<pre>${escapeHtml(body)}</pre>`;
+        els.content.innerHTML = window.DOMPurify ? DOMPurify.sanitize(html) : html;
+        els.docTitle.textContent = prettyName(name);
+        els.docSubtitle.textContent = '真正的 markdown 內頁渲染，主題與版面完全一致。';
+        els.viewerName.textContent = name;
+        els.viewerMeta.textContent = readingMeta(body);
+        document.querySelector('.viewer-body')?.scrollTo({ top: 0, behavior: 'instant' });
+        if (window.innerWidth <= 900) {
+          els.sidebar.classList.add('collapsed');
+        }
+      } catch (err) {
+        renderEmpty(`讀取失敗：${err.message}`);
+        els.docSubtitle.textContent = '檔案載入失敗';
+        els.viewerMeta.textContent = 'load failed';
+      }
+    }
+
+    function applyFilter() {
+      const q = els.search.value.trim().toLowerCase();
+      state.query = q;
+      state.filtered = DOCS.filter(name => name.toLowerCase().includes(q));
+      renderNav();
+      if (!state.filtered.includes(state.active) && state.filtered[0]) {
+        loadDoc(state.filtered[0], false);
+      }
+      if (state.filtered.length === 0) renderEmpty('找不到符合條件的文件。');
+    }
 
     initTheme();
     renderNav();
 
+    els.themeToggle.addEventListener('click', () => {
+      setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+    });
+
+    els.menuToggle.addEventListener('click', () => {
+      els.sidebar.classList.toggle('collapsed');
+    });
+
+    els.search.addEventListener('input', applyFilter);
+
+    window.addEventListener('keydown', (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        els.search.focus();
+      }
+      if (e.key === 'Escape' && window.innerWidth <= 900) {
+        els.sidebar.classList.add('collapsed');
+      }
+    });
+
     const initial = decodeURIComponent((location.hash || '').replace(/^#/, ''));
-    const start = docs.includes(initial) ? initial : docs[0];
-    setActive(start, false);
-    els.search.value = '';
+    const start = DOCS.includes(initial) ? initial : DOCS[0];
+    loadDoc(start, false);
   </script>
 </body>
 </html>
